@@ -1,6 +1,6 @@
 {
   "name": "@fdp/react-app-rewire-typescript",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Add ts-loader to a react-app-rewired config",
   "main": "index.js",
   "files": [
