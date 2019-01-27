@@ -1,30 +1,31 @@
 {
-  "name": "react-app-rewire-typescript",
+  "name": "@fdp/react-app-rewire-typescript",
   "version": "2.0.2",
-  "description": "Add ts-loader to a react-app-rewired config.",
+  "description": "Add ts-loader to a react-app-rewired config",
   "main": "index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"],
-    "*.json": ["prettier --parser json --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --parser json --write",
+      "git add"
+    ]
   },
-  "repository": {
-    "type": "git",
-    "url":
-      "git+https://github.com/lwd-technology/react-app-rewire-typescript.git"
-  },
-  "keywords": ["typescript", "ts-loader", "webpack", "react-app-rewired"],
-  "author": "Ian Copp <ian@wolflair.com>",
+  "keywords": [
+    "typescript",
+    "ts-loader",
+    "webpack",
+    "react-app-rewired"
+  ],
   "license": "MIT",
-  "bugs": {
-    "url":
-      "https://github.com/lwd-technology/react-app-rewire-typescript/issues"
-  },
-  "homepage":
-    "https://github.com/lwd-technology/react-app-rewire-typescript#readme",
   "devDependencies": {
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.6.0",
