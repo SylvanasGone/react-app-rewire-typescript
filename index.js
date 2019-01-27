@@ -58,23 +58,8 @@ const findIndexAndRules = (rulesSource, ruleMatcher) => {
   return result
 }
 
-/**
- * Given a rule, return if it uses a specific loader.
- */
-const createLoaderMatcher = loader => rule =>
-  rule.loader && rule.loader.indexOf(`${path.sep}${loader}${path.sep}`) !== -1
-
-/**
- * Get the existing file-loader config.
- */
-const fileLoaderMatcher = createLoaderMatcher('file-loader')
-
-/**
- * Add one rule before another in the list of rules.
- */
-const addBeforeRule = (rulesSource, ruleMatcher, value) => {
-  const { index, rules } = findIndexAndRules(rulesSource, ruleMatcher)
-  rules.splice(index, 0, value)
+const addFirstRule = (rules, value) => {
+  rules.splice(0, 0, value)
 }
 
 /**
@@ -111,8 +96,8 @@ function rewireTypescript(config, env, typescriptLoaderOptions = {}) {
     ]
   }
 
-  // Add the Typescript rule before the file-loader rule.
-  addBeforeRule(config.module.rules, fileLoaderMatcher, typescriptRules)
+  // Add the Typescript rule in the first place of the file-loader rule.
+  addFirstRule(config.module.rules, typescriptRules)
 
   return config
 }
